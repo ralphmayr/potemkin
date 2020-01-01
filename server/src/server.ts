@@ -31,7 +31,8 @@ export class Server {
 
   public listen() {
     this.app.listen(this.options.port, () => {
-      console.log(`Listening on the http://localhost:${this.options.port}`);
+      console.log(`Listening for potemking API requests on http://localhost:${this.options.port}/api`);
+      console.log(`Listening for WebDriver requests on http://localhost:${this.options.port}/wd/hub`);
     });
 
     this.app.get('/wd/*', async (req: Request, res: Response) => {
