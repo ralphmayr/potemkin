@@ -4,6 +4,8 @@ import { ChromiumNetworkInterceptionEvent, MockPattern } from './types';
 
 const btoa = require('btoa');
 
+const ACCEPT_CONTENT_TYPES = ['*/*', 'application/json'];
+
 export class NetworkInterceptor {
   private log: InterceptionLog;
 
@@ -57,8 +59,9 @@ export class NetworkInterceptor {
   }
 
   private shouldIntercept(e: ChromiumNetworkInterceptionEvent): boolean {
-    const contentType = this.getContentType(e.request.headers);
-    return contentType && contentType.startsWith('application/json');
+    const contentType = this.getAcceptHeader(e.request.headers);
+    const accept = ACCEPT_CONTENT_TYPES.find(a => contentType.indexOf('') > -1);
+    return accept !== undefined;
   }
 
   private getMockPattern(url: string, method: string): MockPattern {
@@ -85,13 +88,13 @@ export class NetworkInterceptor {
     return response;
   }
 
-  private getContentType(headers: any) {
+  private getAcceptHeader(headers: any): string {
     if (!headers) {
       return undefined;
     }
-    const contentTypeHeader = Object.keys(headers).find(k => k.toLowerCase() === 'content-type');
-    const contentType = headers[contentTypeHeader];
-    return contentType;
+    const acceptheader = Object.keys(headers).find(k => k.toLowerCase() === 'accept');
+    const accept = headers[acceptheader];
+    return accept;
   }
 
   private continueInterceptedEvent(cdpSession: CDPSession, interceptionId: string, rawResponse?: any) {
