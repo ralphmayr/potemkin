@@ -1,0 +1,52 @@
+{
+  "fuzzy": [
+    {
+      "query": "snow",
+      "priority": 30
+    },
+    {
+      "query": "snowboard",
+      "priority": 16
+    },
+    {
+      "query": "snowboarding",
+      "priority": 16
+    }
+  ],
+  "autocomplete": [
+    {
+      "query": "snowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnowsnow",
+      "priority": 30
+    },
+    {
+      "query": "snowboarding",
+      "priority": 16
+    },
+    {
+      "query": "snowboard",
+      "priority": 16
+    },
+    {
+      "query": "snowing",
+      "priority": 10
+    },
+    {
+      "query": "snowflake",
+      "priority": 80
+    }
+  ],
+  "did_you_mean": [
+    {
+      "query": "snow",
+      "priority": 30
+    },
+    {
+      "query": "snowboard",
+      "priority": 16
+    },
+    {
+      "query": "snowboarding",
+      "priority": 16
+    }
+  ]
+}
