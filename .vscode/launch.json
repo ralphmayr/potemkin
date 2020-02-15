@@ -16,6 +16,18 @@
       "outFiles": [
         "${workspaceFolder}/server/dist/**/*.js"
       ]
+    },
+    {
+      "type": "node",
+      "name": "Run wdio example",
+      "request": "launch",
+      "args": [
+        "wdio.conf.js"
+      ],
+      "cwd": "${workspaceFolder}/examples/wdio",
+      "autoAttachChildProcesses": true,
+      "program": "${workspaceRoot}/examples/wdio/node_modules/@wdio/cli/bin/wdio.js",
+      "console": "integratedTerminal"
     }
   ]
 }
